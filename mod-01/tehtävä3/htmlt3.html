@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Testing JavaScript</title>
+</head>
+<body>
+<h1>Numbas</h1>
+<script>
+    //console.log olisi consolii pelkästää
+let str1, str2, str3;
+str1 = parseInt(prompt("Anna luku"));
+str2 = parseInt(prompt("Anna toinen luku"));
+str3 = parseInt(prompt("Anna kolmas luku"));
+
+let summaStr = str1 + str2 + str3;
+let kertoStr = str1 * str2 * str3;
+let avgStr = summaStr / 3;
+
+document.write("<p>The summ of the three numbers is: " + summaStr + "</p>");
+document.write("<p>The product of the three numbers is: " + kertoStr + "</p>");
+document.write("<p>The average of the three numbers is: " + avgStr + "</p>");
+</script>
+</body>
+</html>
