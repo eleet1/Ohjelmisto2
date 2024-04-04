@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <h2>DICE PROBABILITY</h2>
+    <script>
+        function Probabilitycalculator(dice, diceSum, tries) {
+            let favorableOutcomes = 0;
+
+            for (let i = 0; i < tries; i++) {
+                let sum = 0;
+                for (let j = 0; j < dice; j++) {
+                    sum += Math.floor(Math.random() * 6) + 1;
+                }
+                if (sum === diceSum) {
+                    favorableOutcomes++;
+                }
+            }
+
+            return (favorableOutcomes / tries) * 100;
+        }
+
+        let dice = parseInt(prompt("Enter the number of dice:"));
+        let diceSum = parseInt(prompt("Enter the sum of eye numbers:"));
+        let tries = 10000;
+
+        let probability = Probabilitycalculator(dice, diceSum, tries);
+
+        document.write("Probability to get sum " + diceSum + " with " + dice + " dice is " + probability.toFixed(2) + "%");
+    </script>
+</body>
+</html>

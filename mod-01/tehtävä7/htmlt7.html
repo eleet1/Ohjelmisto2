@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+    <h1>DICE ROLL</h1>
+<script>
+  'use strict'
+const dice = prompt("How many dice rolls ")
+  let sum = 0;
+for (let i = 0; i < dice; i++){
+  sum += Math.floor(Math.random()* 6 ) +1;
+  }
+
+  document.write("The summ of the dice rolls is: " + sum);
+
+
+</script>
+
+</body>
+</html>
