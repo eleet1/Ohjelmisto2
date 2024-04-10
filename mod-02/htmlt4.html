@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+let list = [];
+let number;
+do {
+    number = parseInt(prompt("Give a number, enter 0 to stop"));
+    if (number !== 0) {
+        list.push(number);
+    }
+} while (number !== 0);
+
+list.sort((a, b) => b - a);
+for (let i of list) {
+    console.log(i);
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<ul id="target">
+
+</ul>
+<script>
+    'use strict'
+    let dogs = [];
+
+    for (let i = 0; i < 6; i++){
+        dogs.push(prompt("Enter the name of dog " + (i+1)));
+    }
+
+    dogs.sort();
+    dogs.reverse();
+    for (let dog of dogs){
+        document.getElementById("target").innerHTML += "<li>" + dog + "</li>";
+    }
+</script>
+</body>
+</html>
