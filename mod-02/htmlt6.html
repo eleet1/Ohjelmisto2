@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>THE DICE ROLL RESULTS:</h1>
+<ul id="results"></ul>
+<script>
+    function rollthedice() {
+        return Math.floor(Math.random() * 6) + 1;
+    }
+
+    function main() {
+        let dicerolls = [];
+        let rollResult;
+
+        do {
+            rollResult = rollthedice();
+            dicerolls.push(rollResult);
+        } while (rollResult !== 6);
+
+        let resultprint = document.getElementById("results");
+        resultprint.innerHTML = dicerolls.map(result => "<li>" + result + "</li>").join('');
+    }
+
+    main();
+</script>
+</body>
+</html>
+
