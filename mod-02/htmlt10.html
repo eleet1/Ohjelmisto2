@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+function getNumberOfCandidates() {
+    return parseInt(prompt("Enter the number of candidates:"));
+}
+
+function getCandidateNames(numCandidates) {
+    let candidates = [];
+    for (let i = 0; i < numCandidates; i++) {
+        let name = prompt("Enter the name for candidate " + (i + 1));
+        candidates.push({ name: name, votes: 0 });
+    }
+    return candidates;
+}
+
+function getNumberOfVoters() {
+    return parseInt(prompt("Enter the number of voters:"));
+}
+
+function castVotes(candidates, numVoters) {
+    for (let i = 0; i < numVoters; i++) {
+        let vote = prompt("Voter " + (i + 1) + ", enter the name of the candidate you want to vote for:");
+        if (vote === "") {
+            continue;
+        }
+        let candidate = candidates.find(candidate => candidate.name === vote);
+        if (candidate) {
+            candidate.votes++;
+        } else {
+            console.log("Invalid candidate name entered: " + vote);
+        }
+    }
+}
+
+function announceResults(candidates) {
+    candidates.sort((a, b) => b.votes - a.votes);
+
+    let winner = candidates[0];
+    console.log("The winner is " + winner.name + " with " + winner.votes + " votes.");
+    console.log("Results:");
+    candidates.forEach(candidate => {
+        console.log(candidate.name + ": " + candidate.votes + " votes");
+    });
+}
+
+function votingProgram() {
+    let numCandidates = getNumberOfCandidates();
+    let candidates = getCandidateNames(numCandidates);
+    let numVoters = getNumberOfVoters();
+    castVotes(candidates, numVoters);
+    announceResults(candidates);
+}
+
+votingProgram();
+</script>
+</body>
+</html>
