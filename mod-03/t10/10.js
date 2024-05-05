@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const target = document.getElementById("target");
 
     form.addEventListener("submit", function(event) {
-        event.preventDefault(); // Stop the default form submission
+        event.preventDefault();
 
         const firstName = document.querySelector('input[name="firstname"]').value;
         const lastName = document.querySelector('input[name="lastname"]').value;
